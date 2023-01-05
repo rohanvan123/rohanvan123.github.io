@@ -1,6 +1,6 @@
 import profilePic from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/images/personal_photo.jpg"
 import resume from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/data/resume.pdf";
-import {FaGithub, FaLinkedin, FaTwitter, FaFileDownload} from 'react-icons/fa';
+import {FaGithub, FaLinkedin, FaTwitter} from 'react-icons/fa';
 import {Link} from "@chakra-ui/react";
 import {Icon} from "@chakra-ui/icons";
 import './App.css';
@@ -44,7 +44,7 @@ function App() {
           <img className="rounded" src={profilePic} alt=""/>
         </div>
 
-        <div style ={{width: '700px', align: "left", fontSize: "22px"}} >
+        <div style ={{width: '700px', align: "left", fontSize: "22px", marginTop: "20px"}} >
           <p>
             Hello! My name is Rohan Vanjani, and I am a sophomore at the <em className="sp-text">University of Illinois at Urbana-Champaign </em>
             currently pursuing a <i>B.S.</i> in <em className="sp-text">Computer Science & Mathematics</em>. I have a passion for programming 
