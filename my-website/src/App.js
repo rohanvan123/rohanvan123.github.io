@@ -1,5 +1,6 @@
 import profilePic from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/images/personal_photo.jpg"
-import {FaGithub, FaLinkedin, FaTwitter} from 'react-icons/fa';
+import resume from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/data/resume.pdf";
+import {FaGithub, FaLinkedin, FaTwitter, FaFileDownload} from 'react-icons/fa';
 import {Link} from "@chakra-ui/react";
 import {Icon} from "@chakra-ui/icons";
 import './App.css';
@@ -54,6 +55,11 @@ function App() {
             weightlifting, investing, and watching basketball. 
           </p>
         </div>
+
+        <div className="download-link">
+          <a className="dl-link" href={resume} download="Rohan_Vanjani_Resume">Download My Resume</a>
+        </div>
+
       </header>
     </div>
   );
