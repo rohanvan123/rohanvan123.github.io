@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: sans-serif;
 }
 
 .App-logo {
@@ -24,15 +25,29 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sp-text  {
+  color:orange;
+  font-style: normal;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* DEMO-SPECIFIC STYLES */
+.typed-out{
+  margin-left: 50px;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  font-size: 3rem;
+  width: 0;
+  animation: 
+    typing 1s steps(20, end) forwards;
+}
+
+.container {
+  display: inline-block;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 75% }
 }
