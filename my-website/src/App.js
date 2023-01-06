@@ -1,6 +1,7 @@
 import profilePic from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/images/personal_photo.jpg"
 import resume from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/data/resume.pdf";
 import {FaGithub, FaLinkedin, FaTwitter} from 'react-icons/fa';
+import {MdEmail} from 'react-icons/md'
 import {Link} from "@chakra-ui/react";
 import {Icon} from "@chakra-ui/icons";
 import './App.css';
@@ -17,6 +18,10 @@ const icons = [
   {
     type: FaTwitter,
     link: "https://twitter.com/rovanjani"
+  },
+  {
+    type: MdEmail,
+    link: "mailto: rohanvanj21@gmail.com"
   }
 ]
 
@@ -51,7 +56,7 @@ function App() {
             and building robust full-stack applications. I am currently seeking opportunities related to <em className="sp-text">Software Engineering</em>, 
             Web Development, and Product Development. On campus, I am currently <em className="sp-text">Software Developer</em> for <a className="sp-text" href="https://uiuc.hack4impact.org/">Hack4Impact</a>,
             where we build full-stack applications for local nonprofits. Additionally, I served as the past <em className="sp-text">Technology Chair</em> for 
-            <em className="sp-text">Alpha Kappa Psi</em>, a professional business fraternity. Outside of school, I am an avid tutor and also enjoy 
+            <em className="sp-text"> Alpha Kappa Psi</em>, a professional business fraternity on campus. Outside of school, I am an avid tutor and also enjoy 
             weightlifting, investing, and watching basketball. 
           </p>
         </div>
