@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    background-color: red;
+}
+.experiences-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 92%;
+    align-items: center;
+  }
+  
+  .experience {
+    border-style: solid;
+    border-color: orange;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 400px;
+    height: 500px;
+    align-items: center;
+  
+  }
+  
+  .company-photo {
+    margin-top: 50px;
+  }
+  .company-image {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    object-position: 0 -2%;
+    border-radius: 100%;
+  }

@@ -1,12 +1,39 @@
 import profilePic from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/images/personal_photo.jpg"
 import ibcLogo from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/images/ibc-logo.jpeg"
 import resume from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/data/resume.pdf";
-import {FaGithub, FaLinkedin, FaTwitter} from 'react-icons/fa';
-import {MdEmail} from 'react-icons/md'
-import {Link} from "@chakra-ui/react";
-import {Icon} from "@chakra-ui/icons";
-import { useEffect } from "react";
+import SiteInnovatorLogo from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/images/SiteInnovator Logo.jpeg"
+
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { MdEmail, MdNavigateNext, MdNavigateBefore } from 'react-icons/md'
+import { RxDot } from 'react-icons/rx'
+import { Button, Link } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/icons";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 import './App.css';
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 
 const icons = [
   {
@@ -35,9 +62,9 @@ const experiences = [
     position: "Software Engineer Intern",
     tenure: "May 2022 - August 2022",
     description: "Developed Python programs to diagnose faulty label printers using data compiled on Google Cloud."
-  }, 
+  },
   {
-    url: "https://www.zebra.com/us/en.html",
+    url: "https://uiuc.hack4impact.org/",
     company: "Hack4Impact UIUC",
     img: "https://ashayp.com/images/h4i.jpeg",
     position: "Software Developer",
@@ -45,12 +72,28 @@ const experiences = [
     description: "Building public-facing web and mobile applications for nonprofit organizations."
   },
   {
-    url: "https://www.zebra.com/us/en.html",
+    url: "https://giesbusiness.illinois.edu/experience/experiential-learning/illinois-business-consulting",
     company: "Illinois Business Consulting",
     img: ibcLogo,
     position: "Consultant",
     tenure: "September 2021 - January 2022",
     description: "Conducted market entry research for a chemical battery additive manufacturer in East Asia."
+  },
+  {
+    url: "https://www.akpsiuiuc.biz/",
+    company: "Alpha Kappa Psi",
+    img: "https://static.wixstatic.com/media/80b5eb_8a28ade9791846ca96f725fa47152ce3~mv2.png/v1/fill/w_400,h_384,al_c/80b5eb_8a28ade9791846ca96f725fa47152ce3~mv2.png",
+    position: "Technology Chair",
+    tenure: "September 2021 - Present",
+    description: "Updated the Epsilon Chapter website to make a more detailed but user-friendly design, displaying both recruitment and promotional content."
+  },
+  {
+    url: "https://siteinnovator.com/",
+    company: "SiteInnovator",
+    img: "https://pbs.twimg.com/profile_images/1253312931946803200/F9wKZuhw_400x400.jpg",
+    position: "Web Developer",
+    tenure: "May 2019 - February 2021",
+    description: "Designed websites for local businesses with WordPress to help expand their online presence."
   }
 ]
 
@@ -62,19 +105,19 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div
-          className="container" 
-          style={{width: "450px"}} >
-            <h1 className="typed-out">
-              Rohan Vanjani
-            </h1>
+          className="container"
+          style={{ width: "450px" }} >
+          <h1 className="typed-out">
+            Rohan Vanjani
+          </h1>
         </div>
 
-        <div style={{display: "flex", justifyContent: "space-evenly", width: "200px", paddingBottom: "50px"}}>
+        <div style={{ display: "flex", justifyContent: "space-evenly", width: "200px", paddingBottom: "50px" }}>
           {icons.map((icon) => (
-            <Link href = {icon.link} isExternal>
-              <Icon 
-                as={icon.type} 
-                color="orange" boxSize={30} 
+            <Link href={icon.link} isExternal>
+              <Icon
+                as={icon.type}
+                color="orange" boxSize={30}
                 _hover={{ color: "white" }}
               />
             </Link>
@@ -82,43 +125,59 @@ function App() {
         </div>
 
         <div className="image-cropper">
-          <img className="rounded" src={profilePic} alt=""/>
+          <img className="rounded" src={profilePic} alt="" />
         </div>
 
-        <div style ={{width: '700px', align: "left", fontSize: "22px", marginTop: "20px", marginBottom: "40px"}} >
+        <div style={{ width: '700px', align: "left", fontSize: "22px", marginTop: "20px", marginBottom: "40px" }} >
           <p>
             Hello! My name is Rohan Vanjani, and I am a sophomore at the <em className="sp-text">University of Illinois at Urbana-Champaign </em>
-            currently pursuing a <i>B.S.</i> in <em className="sp-text">Computer Science & Mathematics</em>. I have a passion for programming 
-            and building robust full-stack applications. I am currently seeking opportunities related to <em className="sp-text">Software Engineering</em>, 
+            currently pursuing a <i>B.S.</i> in <em className="sp-text">Computer Science & Mathematics</em>. I have a passion for programming
+            and building robust full-stack applications. I am currently seeking opportunities related to <em className="sp-text">Software Engineering</em>,
             Web Development, and Product Development. On campus, I am currently <em className="sp-text">Software Developer</em> for <a className="sp-text" href="https://uiuc.hack4impact.org/">Hack4Impact</a>,
-            where we build full-stack applications for local nonprofits. Additionally, I served as the past <em className="sp-text">Technology Chair</em> for 
-            <em className="sp-text"> Alpha Kappa Psi</em>, a professional business fraternity on campus. Outside of school, I am an avid tutor and also enjoy 
-            weightlifting, investing, and watching basketball. 
+            where we build full-stack applications for local nonprofits. Additionally, I served as the past <em className="sp-text">Technology Chair</em> for
+            <em className="sp-text"> Alpha Kappa Psi</em>, a professional business fraternity on campus. Outside of school, I am an avid tutor and also enjoy
+            weightlifting, investing, and watching basketball.
           </p>
         </div>
-        
-        <h1 style={{marginTop: "60px"}}>Experience</h1>
+
+        <h1 style={{ marginTop: "60px" }}>Experience</h1>
 
         <div className="experiences-container">
+          <Carousel
+            responsive={responsive}
+            showDots={true}
+            renderDotsOutside={true}
+            swipeable={true}
+            draggable={true}
+          >
             {experiences.map((data) => (
               <div className="experience">
-                <div className = "company-photo">
+                <div className="company-photo">
                   <img className="company-image" src={data.img} alt=""></img>
-                  <p style={{fontSize: "25px", fontWeight: "bold"}}>{data.company}</p>
+                  <Link
+                    href={data.url}
+                    textDecoration="none"
+                    color="white"
+                    isExternal
+                    _hover={{ color: "orange" }}
+                  >
+                    <p style={{ fontSize: "25px", fontWeight: "bold" }}>{data.company}</p>
+                  </Link>
                 </div>
-                <div style={{width: "100px", backgroundColor: "white", height: "2px", marginLeft: "38%"}}></div>
-                <p style={{fontSize: "20px"}} >{data.position}</p>
-                <p style={{fontSize: "15px", color: "orange"}}>{data.tenure}</p>
-                <p style={{fontSize: "20px", textAlign: "left", width: "90%", marginLeft: "30px", marginTop: "40px"}}>{data.description}</p>
+                <div style={{ width: "100px", backgroundColor: "white", height: "2px", marginLeft: "38%" }}></div>
+                <p style={{ fontSize: "20px" }} >{data.position}</p>
+                <p style={{ fontSize: "15px", color: "orange" }}>{data.tenure}</p>
+                <p style={{ fontSize: "20px", textAlign: "left", width: "90%", marginLeft: "30px", marginTop: "40px" }}>{data.description}</p>
               </div>
             ))}
+          </Carousel>
         </div>
 
         <div className="download-link">
           <a className="dl-link" href={resume} download="Rohan_Vanjani_Resume">Download My Resume</a>
         </div>
 
-        
+
       </header>
     </div>
   );
