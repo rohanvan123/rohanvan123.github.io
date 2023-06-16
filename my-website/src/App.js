@@ -1,12 +1,12 @@
+import React, {useEffect, useState} from "react";
 import profilePic from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/images/personal_photo.jpg"
 import ibcLogo from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/images/ibc-logo.jpeg"
-import resume from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/data/resume.pdf";
+import resume from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/data/Resume.pdf";
 
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaFileDownload } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md'
 import { Link } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/icons";
-
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -67,7 +67,7 @@ const experiences = [
     img: "https://crowddynamicslab.github.io/images/logo.png",
     position: "Undergraduate Research Assistant",
     tenure: "January 2023 - May 2023",
-    description: "Worked with Dr. Hari Sundaram to build a Webscraping app for comparing prices on Amazon."
+    description: "Worked with Dr. Hari Sundaram to build a Webscraping app for comparing prices on Amazon"
   },
   {
     url: "https://uiuc.hack4impact.org/",
@@ -83,7 +83,7 @@ const experiences = [
     img: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAABeCAMAAACqwpxoAAAAbFBMVEX///8AAAh/f4MPDxcvLzY/P0WkpKe/v8EFBQ2vr7IfHyaPj5OWlpkJCRHPz9GHh4tfX2R3d3vv7/DIyMrf3+Bvb3T29vZPT1VoaG0ZGSA3Nz1aWl+6urwpKTDb29wVFRynp6o1NTtKSlA+PkTQam/HAAADQklEQVRYhe3Y27qqIBAAYNDy2EHNtHOt1vu/42ZmQEUOUnf7+9bcZMWfQKMMMuaK4nxNnV8uRME575vQ1t1tbvmqC6N5wfdzy6ugk56g6QST5bsAe9hyHUtbh5w4nWFp3yF2jqVdLagun+JIs78L9sQTfD3EkyFKe/TTXDTZGFhaf2512MrAZNf+0+4ybsNon63fstyKwd4fC9SBC34vQ7JZw7snzVJcQCxfh1aMsb15VG7iaGJ5ljttnZlYsx685jKpcszIeLD3lYof13V45gpjOo8WQHpyD1YEdjVRXZhb7sU0psRlvTgZsdUGYrvldYVhTZKNwg4b1ZQkXuyyLADHLhuCndaBUx07LDs2ELNr8plr2GJL+Ci2/VWxTPX9grX9zzHXsNvyq8Vq2GPNWzV8OME+a9xv8c424o8sTbDE0bKN1iJeEtO1kNHbetH2MvmnWL7dh1k7DrTyjmriEEsfmzhSaeyzQ4Gg42j4brgAWhF5LCIbbMZseF62yHhwLQr2CS40OynbAvBes4fJN0lm4FmB1N0nVL8mcwPPi6t27PV7dg/RFtI0thRmzZXkdj4VZvFgKeoe+6o/Jba6eoaXCkIfXioIfXipuvLiT+M/xTKdy+WWbmxmTzj+LDd0/KVF/K0F/LUV+HvL0sv3li1vF/7iL/4C45bLaB/y4Mbo6IYbwRQPD2q9bbCppGo13rblUIWonejzRdsmEdmVFk5sJMvhH2WPzLRQVazVIT2QusDhGWl7FFHBaRu0lXgboU02bywrhI2rfisXipZ+Z9yxwBYmou7QSMA2WM2twYr71o5T1V+qTspoxY8+G9N2W2hPFjbKa+ryaqU6zeB5Dq09YHuxbazRbvYX7BzZls4LL1E0droVy965G/szmauC5vkZneDZQ0JNdrux05VaL02bXbtxnn+pywUWh1RNQolZdMq+0jQ9oE0PZSbnGRe2uqMuF1VVcFkS9lzVcsY89zApMN5+MiNDOtDk35ndXmDTA/YhehC3MjHUwBiDBHjCY4w9Wnis8UZb1zDSC81zjdMMXe7FoNIeO52q38laa07mZBuY57TEDxg9ajuOvTha5jn7of9oRXuw+6+YNpxVyJriH8/fK5nAoJKhAAAAAElFTkSuQmCC",
     position: "Software Engineer Intern",
     tenure: "May 2022 - August 2022",
-    description: "Assisted in implementing a AndroidOS Blutooth Low Energy tech stack for a temperature sensing device."
+    description: "Assisted in implementing a AndroidOS Blutooth Low Energy Tech stack for a temperature sensing device"
   },
   {
     url: "https://giesbusiness.illinois.edu/experience/experiential-learning/illinois-business-consulting",
@@ -111,9 +111,29 @@ const experiences = [
   }
 ]
 
+const useMobile = () => {
+  const [isMobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const userAgent =
+      typeof window.navigator === "undefined" ? "" : navigator.userAgent;
+    const mobile = Boolean(
+      userAgent.match(
+        /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+      )
+    );
+    setMobile(mobile);
+  }, []);
+
+  return { isMobile };
+}
+
 function App() {
 
   document.title = "Rohan Vanjani";
+  const { isMobile } = useMobile();
+  console.log(isMobile)
+  console.log(resume)
 
   return (
     <div className="App">
@@ -127,8 +147,8 @@ function App() {
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-evenly", width: "200px", paddingBottom: "50px" }}>
-          {icons.map((icon) => (
-            <Link href={icon.link} isExternal>
+          {icons.map((icon, idx) => (
+            <Link key={idx} href={icon.link} isExternal>
               <Icon
                 as={icon.type}
                 color="orange" boxSize={30}
@@ -139,24 +159,25 @@ function App() {
         </div>
 
         <div className="image-cropper">
-          <img className="rounded" src={profilePic} alt="" />
+          <img className={isMobile ? "rounded-mobile" : "rounded"} src={profilePic} alt="" />
         </div>
 
-        <div style={{ width: '700px', align: "left", fontSize: "22px", marginTop: "20px", marginBottom: "40px" }} >
+        <div style={isMobile ? {width: "90%", lineHeight: "1.2"} : { width: '700px', align: "left", fontSize: "22px", marginTop: "20px", marginBottom: "40px", lineHeight: "1.5" }} >
           <p>
             Hello! My name is Rohan Vanjani, and I am a rising Junior at the <em className="sp-text">University of Illinois at Urbana-Champaign </em>
             currently pursuing a <i>B.S.</i> in <em className="sp-text">Computer Science & Mathematics</em>. I have a passion for programming
             and building robust full-stack applications. I am currently seeking opportunities related to <em className="sp-text">Software Engineering</em>,
-            Web Development, and Product Development. On campus, I am currently <em className="sp-text">Software Developer</em> for <a className="sp-text" href="https://uiuc.hack4impact.org/">Hack4Impact</a>,
-            where we build full-stack applications for local nonprofits. Additionally, I served as the past <em className="sp-text">Technology Chair</em> for
-            <em className="sp-text"> Alpha Kappa Psi</em>, a professional business fraternity on campus. Outside of school, I am an avid tutor and also enjoy
-            weightlifting, investing, and watching basketball.
+            Web Development, and Product Development. This summer, I am returning to <em className="sp-text">Zebra Technologies </em>as a <em className="sp-text">Software Engineer Intern II</em> on their 
+            Cloud Infrastructure team. On campus, I am currently a <em className="sp-text">Software Developer</em> for <a className="sp-text" href="https://uiuc.hack4impact.org/">Hack4Impact</a>,
+            where we build full-stack applications for local nonprofits. This past semester, I served as a <em className="sp-text">Research Assistant </em> 
+            under <em className="sp-text">Dr. Hari Sundaram</em>, where we built a web-scraping model to determine price discrimination on Amazon. Outside of school, 
+            I am an avid tutor and also enjoy weightlifting, investing, fishing, and watching basketball.
           </p>
         </div>
 
-        <h1 style={{ marginTop: "60px" }}>Experience</h1>
+        <h1 style={{ marginTop: "30px" }}>Experience</h1>
 
-        <div className="experiences-container">
+        <div className={isMobile ? "experiences-container-mobile" : "experiences-container"}>
           <Carousel
             responsive={responsive}
             showDots={true}
@@ -164,8 +185,8 @@ function App() {
             swipeable={true}
             draggable={true}
           >
-            {experiences.map((data) => (
-              <div className="experience">
+            {experiences.map((data, idx) => (
+              <div key={idx} className={isMobile ? "experience-mobile" : "experience"}>
                 <div className="company-photo">
                   <img className="company-image" src={data.img} alt=""></img>
                   <Link
@@ -186,10 +207,11 @@ function App() {
             ))}
           </Carousel>
         </div>
-
-        <div className="download-link">
-          <a className="dl-link" href={resume} download="Rohan_Vanjani_Resume">Download My Resume</a>
-        </div>
+        
+        <a className="download-link" href={resume} target="_blank" rel="noreferrer">
+          <FaFileDownload size="40px" style={{marginTop: "5px"}}/>
+          <em style={{marginTop: "12px"}}>Download My Resume</em>
+        </a>
 
 
       </header>
