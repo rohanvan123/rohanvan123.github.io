@@ -7,6 +7,13 @@
     "link": "https://rohanvanjani.com/pathfinding-visualizer/"
   },
   {
+    "title": "Investment Portfolio",
+    "description": "Web app for visualizing your custom portfolio using SimFin's Financial API",
+    "tech": ["Next.js", "Firebase Auth", "ReCharts", "Firebase DB"],
+    "imageUrl": "/investment-portfolio.png",
+    "link": "https://investment-portfolio-rohanvan123.vercel.app/"
+  },
+  {
     "title": "Nowcasting Dashboard",
     "description": "Mobile-first web app for users to view nowcasting forecasts for solar energy production on their solar panel arrays.",
     "tech": ["Hack4Impact", "Open Source"],

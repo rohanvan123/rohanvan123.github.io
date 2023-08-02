@@ -51,8 +51,8 @@ function App() {
           <p>
             Hello! My name is Rohan Vanjani, and I am a rising Junior at the <em className="sp-text">University of Illinois at Urbana-Champaign </em>
             currently pursuing a <i>B.S.</i> in <em className="sp-text">Computer Science & Mathematics</em>. I have a passion for programming
-            and building robust full-stack applications. I am currently seeking opportunities related to <em className="sp-text">Software Engineering</em>,
-            Web Development, and Product Development. This summer, I am returning to <em className="sp-text">Zebra Technologies </em>as a <em className="sp-text">Software Engineer Intern II</em> on their 
+            and building full-stack applications. I am currently seeking opportunities related to <em className="sp-text">Software Engineering</em>,
+            Product Development, and Machine Learning. This summer, I am returning to <em className="sp-text">Zebra Technologies </em>as a <em className="sp-text">Software Engineer Intern II</em> on their 
             Cloud Infrastructure team. On campus, I am currently a <em className="sp-text">Software Developer</em> for <a className="sp-text" href="https://uiuc.hack4impact.org/">Hack4Impact</a>,
             where we build full-stack applications for local nonprofits. This past semester, I served as a <em className="sp-text">Research Assistant </em> 
             under <em className="sp-text">Dr. Hari Sundaram</em>, where we built a web-scraping model to determine price discrimination on Amazon. Outside of school, 

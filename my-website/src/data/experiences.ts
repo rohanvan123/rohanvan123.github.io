@@ -6,7 +6,7 @@ const experiences = [
     position: "Software Engineer Intern II",
     tenure: "June 2023 - August 2023",
     description:
-      "Developed Python programs to diagnose faulty label printers using data compiled on Google Cloud.",
+      "Implemented a Prometheus pipeline to scrape and track release data giving managers better insights into project completion on the cloud",
   },
   {
     url: "https://crowddynamicslab.github.io/",
@@ -15,7 +15,7 @@ const experiences = [
     position: "Undergraduate Research Assistant",
     tenure: "January 2023 - May 2023",
     description:
-      "Worked with Dr. Hari Sundaram to build a Webscraping app for comparing prices on Amazon",
+      "Worked with Dr. Hari Sundaram to build a web-scraping app for comparing various industry prices on Amazon",
   },
   {
     url: "https://uiuc.hack4impact.org/",
