@@ -49,7 +49,14 @@ const ProjectCard: FC<ProjectCardProps> = ({
         <img src={imgUrl} alt="" className="project-image" />
       </a>
       <div className="project-text-content">
-        <div className="project-title">{projectName}</div>
+        <a
+          className="project-title"
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {projectName}
+        </a>
         <span className="project-description">{description}</span>
         <div className="tech-list">
           {tech.map((item, idx) => (

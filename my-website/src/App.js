@@ -5,6 +5,7 @@ import icons from "./icons/icons.ts"
 import projects from "./data/projects.json"
 import parseProjects from "./utils/utils.ts"
 import CustomSlider from "./components/CustomSlider.tsx";
+import EmText from "./components/Em.tsx"
 import { useMobile } from "./hooks/useMobile.ts"
 import { FaFileDownload } from 'react-icons/fa';
 import { Link } from "@chakra-ui/react";
@@ -47,16 +48,18 @@ function App() {
           <img className={isMobile ? "rounded-mobile" : "rounded"} src={profilePic} alt="" />
         </div>
 
-        <div style={isMobile ? {width: "90%", lineHeight: "1.2"} : { width: '700px', align: "left", fontSize: "22px", marginTop: "20px", marginBottom: "40px", lineHeight: "1.5" }} >
+        <div style={isMobile ? {width: "90%", lineHeight: "1.2"} : { width: '630px', align: "left", fontSize: "22px", marginTop: "20px", marginBottom: "40px", lineHeight: "1.5" }} >
           <p>
-            Hello! My name is Rohan Vanjani, and I am a rising Junior at the <em className="sp-text">University of Illinois at Urbana-Champaign </em>
-            currently pursuing a <i>B.S.</i> in <em className="sp-text">Computer Science & Mathematics</em>. I have a passion for programming
-            and building full-stack applications. I am currently seeking opportunities related to <em className="sp-text">Software Engineering</em>,
-            Product Development, and Machine Learning. This summer, I am returning to <em className="sp-text">Zebra Technologies </em>as a <em className="sp-text">Software Engineer Intern II</em> on their 
-            Cloud Infrastructure team. On campus, I am currently a <em className="sp-text">Software Developer</em> for <a className="sp-text" href="https://uiuc.hack4impact.org/">Hack4Impact</a>,
-            where we build full-stack applications for local nonprofits. This past semester, I served as a <em className="sp-text">Research Assistant </em> 
-            under <em className="sp-text">Dr. Hari Sundaram</em>, where we built a web-scraping model to determine price discrimination on Amazon. Outside of school, 
-            I am an avid tutor and also enjoy weightlifting, investing, fishing, and watching basketball.
+            Hello! My name is Rohan Vanjani, and I am a Senior at the <EmText>University of Illinois at Urbana-Champaign</EmText>
+            currently pursuing a <i>B.S.</i> in <EmText>Computer Science & Mathematics</EmText>. I have a passion for programming
+            and building full-stack applications. I am currently seeking opportunities related to <EmText>Software Engineering</EmText>
+            , Machine Learning, and Financial Technology. 
+            This past summer, I interned at <EmText href="https://www.chicagoventure.com">Chicago Venture Partners</EmText> as a 
+            <EmText> Full Stack Developer Intern</EmText> on their 
+            Web team. I've had two past Software Engineering internships at <EmText>Zebra Technologies</EmText>. 
+            On campus, I served as a Software Developer for three semesters with 
+            <EmText> Hack4Impact UIUC</EmText>, building software for nonprofits. Outside of school, 
+            I am an avid tutor and also enjoy weightlifting, investing, watching basketball, and Bhangra.
           </p>
         </div>
 

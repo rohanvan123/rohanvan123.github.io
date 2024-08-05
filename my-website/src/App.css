@@ -260,6 +260,15 @@ img.rounded-mobile {
   margin-top: 20px;
   font-size: 30px;
   font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.project-title:hover {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: orange;
 }
 
 .project-description {
