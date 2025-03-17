@@ -204,6 +204,7 @@ img.rounded-mobile {
   height: 200px;
   display: flex;
   flex-direction: row;
+  margin-left: 50px;
 }
 
 .project-card-mobile {
@@ -289,9 +290,8 @@ img.rounded-mobile {
 
 .project-container-desktop {
   display: flex;
-  flex-direction: column;
-  gap: 50px;
   margin-top: 40px;
+  flex-direction: row;
 }
 
 .project-cotainer-mobile {

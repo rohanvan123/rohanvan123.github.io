@@ -2,7 +2,7 @@ import React from "react";
 import profilePic from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/images/personal_photo.jpg"
 import resume from "/Users/rohan_v/Documents/Projects/Personal Website/rohanvan123.github.io/my-website/src/data/Resume.pdf";
 import icons from "./icons/icons.ts"
-import projects from "./data/projects.json"
+import projects from "./data/projects.ts"
 import parseProjects from "./utils/utils.ts"
 import CustomSlider from "./components/CustomSlider.tsx";
 import EmText from "./components/Em.tsx"
@@ -50,13 +50,13 @@ function App() {
 
         <div style={isMobile ? {width: "90%", lineHeight: "1.2"} : { width: '630px', align: "left", fontSize: "22px", marginTop: "20px", marginBottom: "40px", lineHeight: "1.5" }} >
           <p>
-            Hello! My name is Rohan Vanjani, and I am a Senior at the <EmText>University of Illinois at Urbana-Champaign</EmText>
+            Hello! My name is Rohan Vanjani, and I am a Senior <EmText>University of Illinois at Urbana-Champaign </EmText>
             currently pursuing a <i>B.S.</i> in <EmText>Computer Science & Mathematics</EmText>. I have a passion for programming
             and building full-stack applications. I am currently seeking opportunities related to <EmText>Software Engineering</EmText>
-            , Machine Learning, and Financial Technology. 
+            , Financial Technology, and Artificial Intelligence. 
             This past summer, I interned at <EmText href="https://www.chicagoventure.com">Chicago Venture Partners</EmText> as a 
-            <EmText> Full Stack Developer Intern</EmText> on their 
-            Web team. I've had two past Software Engineering internships at <EmText>Zebra Technologies</EmText>. 
+            <EmText> Full Stack Developer</EmText> on their 
+            Web team. I have also completed two past Software Engineering internships at <EmText>Zebra Technologies</EmText>. 
             On campus, I served as a Software Developer for three semesters with 
             <EmText> Hack4Impact UIUC</EmText>, building software for nonprofits. Outside of school, 
             I am an avid tutor and also enjoy weightlifting, investing, watching basketball, and Bhangra.
